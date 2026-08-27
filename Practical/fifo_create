@@ -1,0 +1,14 @@
+  GNU nano 8.7.1                          fifo_create.c
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+int main()
+{
+if (mkfifo("myfifo", 0666) == -1)
+{
+perror("myfifo");
+return 1;
+}
+printf("FIFO created\n");
+return 0;
+}
